@@ -1,13 +1,13 @@
 from abc import ABC, abstractmethod
 
-from task.constants import API_KEY
+from task.constants import DIAL_API_KEY
 from task.models.message import Message
 
 
 class BaseClient(ABC):
 
     def __init__(self, deployment_name: str):
-        api_key = API_KEY
+        api_key = DIAL_API_KEY
         if not api_key or api_key.strip() == "":
             raise ValueError("API key cannot be null or empty")
         self._api_key = api_key
